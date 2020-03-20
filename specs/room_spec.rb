@@ -14,6 +14,11 @@ class TestRoom < Minitest::Test
     @guest_3 = Guest.new("Kylie")
     @guests = [@guest_1, @guest_2, @guest_3]
 
+    @song_1 = Song.new("Purple Rain", "Prince", 1984)
+    @song_2 = Song.new("Eye of the Tiger", "Survivor", 1982)
+    @song_3 = Song.new("I Wanna Dance with Somebody", "Whitney Houston", 1987)
+    @songs = [@song_1, @song_2, @song_3]
+
     @room = Room.new("Bowie")
   end
 
@@ -32,6 +37,11 @@ class TestRoom < Minitest::Test
   def test_add_guests
     @room.add_guests(@guests)
     assert_equal(3, @room.guests.size)
+  end
+
+  def test_add_songs
+    @room.add_songs(@songs)
+    assert_equal(3, @room.songs.size)
   end
 
 end
