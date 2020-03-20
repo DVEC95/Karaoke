@@ -9,6 +9,11 @@ require_relative('../guest.rb')
 class TestRoom < Minitest::Test
 
   def setup
+    @guest_1 = Guest.new("Elvis")
+    @guest_2 = Guest.new("Kurt")
+    @guest_3 = Guest.new("Kylie")
+    @guests = [@guest_1, @guest_2, @guest_3]
+
     @room = Room.new("Bowie")
   end
 
@@ -22,6 +27,11 @@ class TestRoom < Minitest::Test
 
   def test_get_songs
     assert_equal(0, @room.songs.size)
+  end
+
+  def test_add_guests
+    @room.add_guests(@guests)
+    assert_equal(3, @room.guests.size)
   end
 
 end
