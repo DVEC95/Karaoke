@@ -19,11 +19,15 @@ class TestRoom < Minitest::Test
     @song_3 = Song.new("I Wanna Dance with Somebody", "Whitney Houston", 1987)
     @songs = [@song_1, @song_2, @song_3]
 
-    @room = Room.new("Bowie")
+    @room = Room.new("Bowie", 5)
   end
 
   def test_get_room_number
     assert_equal("Bowie", @room.room_name)
+  end
+
+  def test_max_capacity
+    assert_equal(5, @room.max_capacity)
   end
 
   def test_get_guests
