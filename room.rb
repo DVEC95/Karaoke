@@ -1,10 +1,11 @@
 class Room
 
-  attr_reader :room_number
+  attr_reader :room_name
 
-  def initialize(room_number)
-    @room_number = room_number
+  def initialize(room_name)
+    @room_name = room_name
     @guests = []
+    @songs = []
   end
 
 end
