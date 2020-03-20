@@ -8,4 +8,10 @@ class Room
     @songs = []
   end
 
+  def add_guests(guests)
+    for guest in guests
+      @guests.push(guests)
+    end
+  end
+
 end
