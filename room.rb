@@ -14,4 +14,10 @@ class Room
     end
   end
 
+  def add_songs(songs)
+    for song in songs
+      @songs.push(songs)
+    end
+  end
+
 end
