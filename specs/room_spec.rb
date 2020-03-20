@@ -39,6 +39,13 @@ class TestRoom < Minitest::Test
     assert_equal(3, @room.guests.size)
   end
 
+  def test_remove_guests
+    @room.add_guests(@guests)
+    assert_equal(3, @room.guests.size)
+    @room.remove_guests
+    assert_equal(0, @room.guests.size)
+  end
+
   def test_add_songs
     @room.add_songs(@songs)
     assert_equal(3, @room.songs.size)
