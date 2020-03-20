@@ -14,6 +14,10 @@ class Room
     end
   end
 
+  def remove_guests()
+    @guests.clear
+  end
+
   def add_songs(songs)
     for song in songs
       @songs.push(songs)
