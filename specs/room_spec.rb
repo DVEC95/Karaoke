@@ -10,15 +10,15 @@ class TestRoom < Minitest::Test
 
   def setup
 
-    @guest_1 = Guest.new("Elvis", 10)
-    @guest_2 = Guest.new("Kurt", 3)
-    @guest_3 = Guest.new("Kylie", 8)
+    @guest_1 = Guest.new("Elvis", 10, "All Shook Up")
+    @guest_2 = Guest.new("Kurt", 3, "Smells Like Teen Spirit")
+    @guest_3 = Guest.new("Prince", 8, "Purple Rain")
 
     @guests = [@guest_1, @guest_2, @guest_3]
 
-    @song_1 = Song.new("Purple Rain", "Prince", 1984)
+    @song_1 = Song.new("All Shook Up", "Elvis Presley", 1957)
     @song_2 = Song.new("Eye of the Tiger", "Survivor", 1982)
-    @song_3 = Song.new("I Wanna Dance with Somebody", "Whitney Houston", 1987)
+    @song_3 = Song.new("Like a Prayer", "Madonna", 1989)
     @songs = [@song_1, @song_2, @song_3]
 
     @room = Room.new("Bowie", 5, 5)
@@ -59,9 +59,9 @@ class TestRoom < Minitest::Test
   end
 
   def test_too_many_guests
-    guest_4 = Guest.new("Elizabeth", 8)
-    guest_5 = Guest.new("Brian", 7)
-    guest_6 = Guest.new("Ringo", 6)
+    guest_4 = Guest.new("Ozzy", 8, "Iron Man")
+    guest_5 = Guest.new("Brian", 7, "God Only Knows")
+    guest_6 = Guest.new("Ringo", 6, "Hey Jude")
     @guests = [@guest_1, @guest_2, @guest_3, guest_4, guest_5, guest_6]
 
     @room.add_guests(@guests)
@@ -78,7 +78,5 @@ class TestRoom < Minitest::Test
     assert_equal(5, @guests[0].wallet)
     assert_equal(3, @guests[1].wallet)
   end
-
-
 
 end
